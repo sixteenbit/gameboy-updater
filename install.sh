@@ -111,7 +111,7 @@ echo "INSTALLING.."
 
 # Checkout code if not already done so
 if ! exists "$BINDIR/LICENSE" ; then
-  execute "git clone --recursive --depth 1 --branch $BRANCH $GITHUBURL $BINDIR"
+    execute "git clone --recursive --depth 1 --branch $BRANCH $GITHUBURL $BINDIR"
 fi
 execute "chown -R $USER:$USER $BINDIR"
 
@@ -126,26 +126,26 @@ execute "cp $BINDIR/settings/asound.conf $DEST/etc/asound.conf"
 
 # Fix splashsreen sound
 if exists "$DEST/etc/init.d/asplashscreen" ; then
-  execute "sed -i \"s/ *both/ alsa/\" $DEST/etc/init.d/asplashscreen"
+    execute "sed -i \"s/ *both/ alsa/\" $DEST/etc/init.d/asplashscreen"
 fi
 if exists "$DEST/opt/retropie/supplementary/splashscreen/asplashscreen.sh" ; then
-  execute "sed -i \"s/ *both/ alsa/\" $DEST/opt/retropie/supplementary/splashscreen/asplashscreen.sh"
+    execute "sed -i \"s/ *both/ alsa/\" $DEST/opt/retropie/supplementary/splashscreen/asplashscreen.sh"
 fi
 
 # Fix N64 audio
 if exists "$DEST/opt/retropie/emulators/mupen64plus/bin/mupen64plus.sh" ; then
-  execute "sed -i \"s/mupen64plus-audio-omx/mupen64plus-audio-sdl/\" $DEST/opt/retropie/emulators/mupen64plus/bin/mupen64plus.sh"
+    execute "sed -i \"s/mupen64plus-audio-omx/mupen64plus-audio-sdl/\" $DEST/opt/retropie/emulators/mupen64plus/bin/mupen64plus.sh"
 fi
 
 # Install the pixel theme and set it as default
-# if ! exists "$DEST/etc/emulationstation/themes/pixel/system/theme.xml" ; then
-#   execute "mkdir -p $DEST/etc/emulationstation/themes"
-#   execute "rm -rf $DEST/etc/emulationstation/themes/pixel"
-#   execute "git clone --recursive --depth 1 --branch master https://github.com/kiteretro/es-theme-pixel.git $DEST/etc/emulationstation/themes/pixel"
-#   execute "cp $BINDIR/settings/es_settings.cfg $DEST/opt/retropie/configs/all/emulationstation/es_settings.cfg"
-#   execute "sed -i \"s/carbon/pixel/\" $DEST/opt/retropie/configs/all/emulationstation/es_settings.cfg"
-#   execute "chown $USER:$USER $DEST/opt/retropie/configs/all/emulationstation/es_settings.cfg"
-# fi
+if ! exists "$DEST/etc/emulationstation/themes/pixel/system/theme.xml" ; then
+    execute "mkdir -p $DEST/etc/emulationstation/themes"
+    execute "rm -rf $DEST/etc/emulationstation/themes/pixel"
+    execute "git clone --recursive --depth 1 --branch master https://github.com/kiteretro/es-theme-pixel.git $DEST/etc/emulationstation/themes/pixel"
+    execute "cp $BINDIR/settings/es_settings.cfg $DEST/opt/retropie/configs/all/emulationstation/es_settings.cfg"
+    execute "sed -i \"s/carbon/pixel/\" $DEST/opt/retropie/configs/all/emulationstation/es_settings.cfg"
+    execute "chown $USER:$USER $DEST/opt/retropie/configs/all/emulationstation/es_settings.cfg"
+fi
 
 # Enable 30sec autosave on roms
 execute "sed -i \"s/# autosave_interval =/autosave_interval = \"30\"/\" $DEST/opt/retropie/configs/all/retroarch.cfg"
@@ -155,7 +155,7 @@ execute "rm -f $DEST/etc/systemd/system/dhcpcd.service.d/wait.conf"
 
 # Enable /tmp as a tmpfs (ramdisk)
 if [[ $(grep '/ramdisk' $DEST/etc/fstab) == "" ]] ; then
-  execute "echo 'tmpfs    /ramdisk    tmpfs    defaults,noatime,nosuid,size=1m    0 0' >> $DEST/etc/fstab"
+    execute "echo 'tmpfs    /ramdisk    tmpfs    defaults,noatime,nosuid,size=1m    0 0' >> $DEST/etc/fstab"
 fi
 
 #####################################################################
