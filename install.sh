@@ -119,7 +119,7 @@ execute "chown -R $USER:$USER $BINDIR"
 # Copy required to /
 
 # Copy splashscreens
-execute "cp $BINDIR/splashscreens/GBZ-Splash-Screen.mp4 $DEST/home/pi/RetroPie/splashscreens/GBZ-Splash-Screen.mp4"
+execute "cp $BINDIR/splashscreens/GBZ-Splash-Screen.mp4 $PIHOMEDIR/RetroPie/splashscreens/GBZ-Splash-Screen.mp4"
 
 # Copy USB sound
 execute "cp $BINDIR/settings/asound.conf $DEST/etc/asound.conf"
