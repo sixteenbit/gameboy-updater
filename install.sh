@@ -45,7 +45,7 @@ else
   DEST=""
 fi
 
-GITHUBPROJECT="gameboy-zero-installer"
+GITHUBPROJECT="sixteenbit-installer"
 GITHUBURL="https://github.com/sixteenbit/$GITHUBPROJECT"
 PIHOMEDIR="$DEST/home/pi"
 BINDIR="$PIHOMEDIR/$GITHUBPROJECT"
