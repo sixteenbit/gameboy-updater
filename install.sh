@@ -68,6 +68,14 @@ fi
 execute "chown -R $USER:$USER $BINDIR"
 
 #####################################################################
+# Copy required to /boot
+
+if ! exists "$DESTBOOT/config_ORIGINAL.txt" ; then
+  execute "cp $DESTBOOT/config.txt $DESTBOOT/config_ORIGINAL.txt"
+  execute "cp $BINDIR/settings/config.txt $DESTBOOT/config.txt"
+fi
+
+#####################################################################
 # Functions
 execute() { #STRING
   if [ $# != 1 ] ; then
@@ -137,14 +145,41 @@ if exists "$DEST/opt/retropie/emulators/mupen64plus/bin/mupen64plus.sh" ; then
     execute "sed -i \"s/mupen64plus-audio-omx/mupen64plus-audio-sdl/\" $DEST/opt/retropie/emulators/mupen64plus/bin/mupen64plus.sh"
 fi
 
+# Fix C64 audio
+if ! exists "$PIHOMEDIR/.vice/sdl-vicerc" ; then
+      execute "mkdir -p $PIHOMEDIR/.vice/"
+      execute "echo 'SoundOutput=2' > $PIHOMEDIR/.vice/sdl-vicerc"
+fi
+
+# Install the gbz35 theme and set it as default
+if ! exists "$DEST/etc/emulationstation/themes/gbz35/gbz35.xml" ; then
+    execute "mkdir -p $DEST/etc/emulationstation/themes"
+    execute "rm -rf $DEST/etc/emulationstation/themes/gbz35"
+    execute "git clone --recursive --depth 1 --branch master https://github.com/rxbrad/es-theme-gbz35.git $DEST/etc/emulationstation/themes/gbz35"
+    execute "cp $BINDIR/settings/es_settings.cfg $DEST/opt/retropie/configs/all/emulationstation/es_settings.cfg"
+    execute "sed -i \"s/carbon/gbz35/\" $DEST/opt/retropie/configs/all/emulationstation/es_settings.cfg"
+    execute "chown $USER:$USER $DEST/opt/retropie/configs/all/emulationstation/es_settings.cfg"
+fi
+
+# Install the gbz35-dark theme
+if ! exists "$DEST/etc/emulationstation/themes/gbz35-dark/gbz35.xml" ; then
+    execute "mkdir -p $DEST/etc/emulationstation/themes"
+    execute "rm -rf $DEST/etc/emulationstation/themes/gbz35-dark"
+    execute "git clone --recursive --depth 1 --branch master https://github.com/rxbrad/es-theme-gbz35-dark.git $DEST/etc/emulationstation/themes/gbz35-dark"
+fi
+
+# Install the freeplay theme
+if ! exists "$DEST/etc/emulationstation/themes/freeplay/freeplay.xml" ; then
+    execute "mkdir -p $DEST/etc/emulationstation/themes"
+    execute "rm -rf $DEST/etc/emulationstation/themes/freeplay"
+    execute "git clone --recursive --depth 1 --branch master https://github.com/rxbrad/es-theme-freeplay.git $DEST/etc/emulationstation/themes/freeplay"
+fi
+
 # Install the pixel theme and set it as default
 if ! exists "$DEST/etc/emulationstation/themes/pixel/system/theme.xml" ; then
     execute "mkdir -p $DEST/etc/emulationstation/themes"
     execute "rm -rf $DEST/etc/emulationstation/themes/pixel"
     execute "git clone --recursive --depth 1 --branch master https://github.com/kiteretro/es-theme-pixel.git $DEST/etc/emulationstation/themes/pixel"
-    execute "cp $BINDIR/settings/es_settings.cfg $DEST/opt/retropie/configs/all/emulationstation/es_settings.cfg"
-    execute "sed -i \"s/carbon/pixel/\" $DEST/opt/retropie/configs/all/emulationstation/es_settings.cfg"
-    execute "chown $USER:$USER $DEST/opt/retropie/configs/all/emulationstation/es_settings.cfg"
 fi
 
 # Enable 30sec autosave on roms
