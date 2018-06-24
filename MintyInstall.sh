@@ -11,7 +11,7 @@ sudo pip install adafruit-ads1x15
 cd ~
 sudo chmod 755 /home/pi/Mintybatterymonitor/Pngview/pngview
 sudo chmod 755 /home/pi/Mintybatterymonitor/MtoggleFileintyStart.sh
-sudo sed -i '/\"exit 0\"/!s/exit 0/\/home\/pi\/Mintybatterymonitor\/MintyStart.sh \&\nexit 0/g' /etc/rc.local
+sudo sed -i '/\"exit 0\"/!s/exit 0/\/home\/pi\/sixteenbit-installer/Mintybatterymonitor\/MintyStart.sh \&\nexit 0/g' /etc/rc.local
 
 config_txt=/boot/config.txt
 echo "Enabling i2c..."
