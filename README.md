@@ -1,6 +1,6 @@
 # Sixteenbit Installer
 
-This script is originally built by [Kite](https://github.com/kiteretro/Circuit-Sword) for the Circuit Sword but has been re-purposed for Gameboy Zero. 
+Provisioning scripts for RetroPie 4.4 to be used with Gameboy Zero.
 
 ## Running the installer
 
@@ -9,14 +9,12 @@ This script is originally built by [Kite](https://github.com/kiteretro/Circuit-S
 1. Enable WIFI and SSH
 1. `git clone https://github.com/sixteenbit/sixteenbit-installer.git`
 1. `cd sixteenbit-installer`
-1. `sudo ./install.sh YES` 
+1. `sudo ./install.sh YES`
+1. `sudo ./MintyInstall.sh` (optional)
 1. `reboot`
 
-## Installing Battery Monitor
+## Credits
 
-The included MintyBatteryMonitor is a modified version of [HoolyHoo's](https://github.com/HoolyHoo/Mintybatterymonitor)
+Installer script originally built by [Kite](https://github.com/kiteretro/Circuit-Sword) for the Circuit Sword but has been re-purposed for Gameboy Zero.
 
-1. `git clone https://github.com/sixteenbit/sixteenbit-installer.git`
-1. `cd sixteenbit-installer`
-1. `sudo ./MintyInstall.sh`
-1. `reboot`
+MintyBatteryMonitor is a modified version of [HoolyHoo's](https://github.com/HoolyHoo/Mintybatterymonitor).

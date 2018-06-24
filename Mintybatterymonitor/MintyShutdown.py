@@ -5,7 +5,7 @@ import os
 import time
 
 
-toggleFile = '/home/pi/Mintybatterymonitor/Toggle.txt'
+toggleFile = '/tmp/Toggle.txt'
 
 try:
     with open(toggleFile, 'r') as f:
