@@ -1,8 +1,7 @@
 #!/bin/bash
 
 #
-# This file originates from Kite's Circuit Sword control board project.
-# Author: Kite (Giles Burgess)
+# Author: Justin Peacock
 #
 # THIS HEADER MUST REMAIN WITH THIS FILE AT ALL TIMES
 #
