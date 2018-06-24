@@ -10,8 +10,24 @@ Provisioning scripts for RetroPie 4.4 to be used with Gameboy Zero.
 1. `git clone https://github.com/sixteenbit/sixteenbit-installer.git`
 1. `cd sixteenbit-installer`
 1. `sudo ./install.sh YES`
-1. `sudo ./MintyInstall.sh` (optional)
-1. `reboot`
+1. `sudo reboot now`
+
+## Post installation
+
+### Install Battery Monitor
+
+1. `wget https://raw.githubusercontent.com/sixteenbit/Mintybatterymonitor/master/MintyInstall.sh`
+1. `sudo git clone https://github.com/sixteenbit/Mintybatterymonitor.git`
+1. `sudo ./MintyInstall.sh`
+1. `sudo reboot now`
+
+### Install Retrogame
+
+```bash
+cd; curl https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/retrogame.sh >retrogame.sh
+sudo bash retrogame.sh
+```
+
 
 ## Credits
 
