@@ -24,20 +24,20 @@ def shutdown():
 def togglestate():
     global state
     if state == 1:
-        os.system('sudo pkill -f "python /home/pi/Mintybatterymonitor/MintyBatteryMonitor.py"')
+        os.system('sudo pkill -f "python /home/pi/sixteenbit-installer/Mintybatterymonitor/MintyBatteryMonitor.py"')
         state = 0
         with open(toggleFile, 'w') as f:
             f.write('0')
         time.sleep(2)
-        os.system("python /home/pi/Mintybatterymonitor/MintyBatteryMonitor.py &")
+        os.system("python /home/pi/sixteenbit-installer/Mintybatterymonitor/MintyBatteryMonitor.py &")
         time.sleep(1)
     else:
-        os.system('sudo pkill -f "python /home/pi/Mintybatterymonitor/MintyBatteryMonitor.py"')
+        os.system('sudo pkill -f "python /home/pi/sixteenbit-installer/Mintybatterymonitor/MintyBatteryMonitor.py"')
         state = 1
         with open(toggleFile, 'w') as f:
             f.write('1')
         time.sleep(2)
-        os.system("python /home/pi/Mintybatterymonitor/MintyBatteryMonitor.py &")
+        os.system("python /home/pi/sixteenbit-installer/Mintybatterymonitor/MintyBatteryMonitor.py &")
         time.sleep(1)
 
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-python /home/pi/Mintybatterymonitor/MintyShutdown.py &
+python /home/pi/sixteenbit-installer/Mintybatterymonitor/MintyShutdown.py &
 sleep 27
-python /home/pi/Mintybatterymonitor/MintyBatteryMonitor.py &
+python /home/pi/sixteenbit-installer/Mintybatterymonitor/MintyBatteryMonitor.py &
