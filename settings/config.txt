@@ -1,5 +1,6 @@
 # For more options and information see
 # http://rpf.io/configtxt
+# Some settings may impact device functionality. See link above for details
 
 # uncomment the following to adjust overscan. Use positive numbers if console
 # goes off screen, and negative if there is too much border
@@ -8,13 +9,15 @@
 #overscan_top=16
 #overscan_bottom=16
 
-# uncomment to force a console size. By default it will be display's size minus
-# overscan.
-framebuffer_width=320
-framebuffer_height=240
+# Additional overlays and parameters are documented /boot/overlays/README
 
 # Enable audio (loads snd_bcm2835)
 dtparam=audio=on
+gpu_mem_256=128
+gpu_mem_512=256
+gpu_mem_1024=256
+overscan_scale=1
+dtparam=i2c_arm=on
 
 # Disable Pi Status LED
 dtparam=act_led_trigger=none
