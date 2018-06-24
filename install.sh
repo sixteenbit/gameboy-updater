@@ -58,24 +58,6 @@ else
 fi
 
 #####################################################################
-# LOGIC!
-echo "INSTALLING.."
-
-# Checkout code if not already done so
-if ! exists "$BINDIR/LICENSE" ; then
-  execute "git clone --recursive --depth 1 --branch $BRANCH $GITHUBURL $BINDIR"
-fi
-execute "chown -R $USER:$USER $BINDIR"
-
-#####################################################################
-# Copy required to /boot
-
-if ! exists "$DESTBOOT/config_ORIGINAL.txt" ; then
-  execute "cp $DESTBOOT/config.txt $DESTBOOT/config_ORIGINAL.txt"
-  execute "cp $BINDIR/settings/config.txt $DESTBOOT/config.txt"
-fi
-
-#####################################################################
 # Functions
 execute() { #STRING
   if [ $# != 1 ] ; then
@@ -122,6 +104,14 @@ if ! exists "$BINDIR/LICENSE" ; then
     execute "git clone --recursive --depth 1 --branch $BRANCH $GITHUBURL $BINDIR"
 fi
 execute "chown -R $USER:$USER $BINDIR"
+
+#####################################################################
+# Copy required to /boot
+
+if ! exists "$DESTBOOT/config_ORIGINAL.txt" ; then
+  execute "cp $DESTBOOT/config.txt $DESTBOOT/config_ORIGINAL.txt"
+  execute "cp $BINDIR/settings/config.txt $DESTBOOT/config.txt"
+fi
 
 #####################################################################
 # Copy required to /
