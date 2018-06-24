@@ -1,6 +1,6 @@
 # Sixteenbit Installer
 
-This script is originally built by [Kite (Giles Burgess)](https://github.com/kiteretro/Circuit-Sword) for the Circuit Sword but has been re-purposed for Gameboy Zero. 
+This script is originally built by [Kite](https://github.com/kiteretro/Circuit-Sword) for the Circuit Sword but has been re-purposed for Gameboy Zero. 
 
 ## How to use
 
