@@ -2,6 +2,20 @@
 
 Provisioning scripts for RetroPie 4.4 to be used with Gameboy Zero.
 
+## What's in the box
+
+1. Optimized [config.txt](settings/config.txt) which includes overclocking
+1. Downloads Gameboy Zero splashscreen by [AJRedfern](https://www.sudomod.com/forum/viewtopic.php?f=8&t=1440)
+1. USB audio setup
+1. Fix for splashscreen audio when using USB audio
+1. Fix N64 audio
+1. Fix C64 audio
+1. Install the gbz35 theme and set it as default
+1. Install the gbz35-dark, freeplay, and pixel themes
+1. Enable 30sec autosave on roms
+1. Disable 'wait for network' on boot
+1. Enable /tmp as a tmpfs (ramdisk)
+
 ## Running the installer
 
 1. Download RetroPie from the [official site](https://retropie.org.uk/download/)
