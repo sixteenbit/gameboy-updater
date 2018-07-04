@@ -1,6 +1,6 @@
 # Sixteenbit Installer
 
-Provisioning scripts for RetroPie 4.4 to be used with Gameboy Zero.
+Provisioning scripts for RetroPie to be used with Gameboy Zero.
 
 ## What's in the box
 
