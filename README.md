@@ -30,6 +30,8 @@ Provisioning scripts for RetroPie to be used with Gameboy Zero.
 
 ### Install Battery Monitor
 
+This is a modified version of HoolyHoo's [Mintybatterymonitor](https://github.com/HoolyHoo/Mintybatterymonitor).
+
 1. `wget https://raw.githubusercontent.com/sixteenbit/Mintybatterymonitor/master/MintyInstall.sh`
 1. `sudo git clone https://github.com/sixteenbit/Mintybatterymonitor.git`
 1. `sudo ./MintyInstall.sh`
