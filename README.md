@@ -34,6 +34,7 @@ This is a [modified version](https://github.com/sixteenbit/Mintybatterymonitor) 
 
 1. `wget https://raw.githubusercontent.com/sixteenbit/Mintybatterymonitor/master/MintyInstall.sh`
 1. `sudo git clone https://github.com/sixteenbit/Mintybatterymonitor.git`
+1. `sudo chmod 777 MintyInstall.sh`
 1. `sudo ./MintyInstall.sh`
 1. `sudo reboot now`
 
