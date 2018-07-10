@@ -1,11 +1,11 @@
-# Sixteenbit Installer
+# Gameboy Zero Setup
 
-Provisioning scripts for RetroPie to be used with Gameboy Zero.
+Scripts for setting up RetroPie on a Gameboy Zero.
 
 ## What's in the box
 
 1. Optimized [config.txt](settings/config.txt) which includes overclocking
-1. Downloads Gameboy Zero splashscreen by [AJRedfern](https://www.sudomod.com/forum/viewtopic.php?f=8&t=1440)
+1. Download Gameboy Zero splashscreen by [AJRedfern](https://www.sudomod.com/forum/viewtopic.php?f=8&t=1440)
 1. USB audio setup
 1. Fix for splashscreen audio when using USB audio
 1. Fix N64 audio
@@ -21,7 +21,7 @@ Provisioning scripts for RetroPie to be used with Gameboy Zero.
 1. Download RetroPie from the [official site](https://retropie.org.uk/download/)
 1. Flash the .img to an SD card (e.g. using [Etcher](https://etcher.io/) or [Apple Pi Baker](https://www.tweaking4all.com/software/macosx-software/macosx-apple-pi-baker/))
 1. Enable WIFI and SSH
-1. `git clone https://github.com/sixteenbit/sixteenbit-installer.git`
+1. `git clone https://github.com/sixteenbit/gameboy-zero-setup.git`
 1. `cd sixteenbit-installer`
 1. `sudo ./install.sh YES`
 1. `sudo reboot now`
@@ -30,7 +30,7 @@ Provisioning scripts for RetroPie to be used with Gameboy Zero.
 
 ### Install Battery Monitor
 
-This is a modified version of HoolyHoo's [Mintybatterymonitor](https://github.com/HoolyHoo/Mintybatterymonitor).
+This is a [modified version](https://github.com/sixteenbit/Mintybatterymonitor) of HoolyHoo's [Mintybatterymonitor](https://github.com/HoolyHoo/Mintybatterymonitor).
 
 1. `wget https://raw.githubusercontent.com/sixteenbit/Mintybatterymonitor/master/MintyInstall.sh`
 1. `sudo git clone https://github.com/sixteenbit/Mintybatterymonitor.git`
