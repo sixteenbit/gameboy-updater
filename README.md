@@ -11,7 +11,7 @@ Scripts for setting up RetroPie on a Gameboy Zero.
 1. Fix N64 audio
 1. Fix C64 audio
 1. Install the gbz35 theme and set it as default
-1. Install the gbz35-dark, freeplay, and pixel themes
+1. Install the gbz35-dark and pixel themes
 1. Enable 30sec autosave on roms
 1. Disable 'wait for network' on boot
 1. Enable /tmp as a tmpfs (ramdisk)
