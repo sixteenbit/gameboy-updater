@@ -157,13 +157,6 @@ if ! exists "$DEST/etc/emulationstation/themes/gbz35-dark/gbz35.xml" ; then
     execute "git clone --recursive --depth 1 --branch master https://github.com/rxbrad/es-theme-gbz35-dark.git $DEST/etc/emulationstation/themes/gbz35-dark"
 fi
 
-# Install the freeplay theme
-if ! exists "$DEST/etc/emulationstation/themes/freeplay/freeplay.xml" ; then
-    execute "mkdir -p $DEST/etc/emulationstation/themes"
-    execute "rm -rf $DEST/etc/emulationstation/themes/freeplay"
-    execute "git clone --recursive --depth 1 --branch master https://github.com/rxbrad/es-theme-freeplay.git $DEST/etc/emulationstation/themes/freeplay"
-fi
-
 # Install the pixel theme and set it as default
 if ! exists "$DEST/etc/emulationstation/themes/pixel/system/theme.xml" ; then
     execute "mkdir -p $DEST/etc/emulationstation/themes"
