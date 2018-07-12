@@ -22,11 +22,18 @@ Scripts for setting up RetroPie on a Gameboy Zero.
 1. Flash the .img to an SD card (e.g. using [Etcher](https://etcher.io/) or [Apple Pi Baker](https://www.tweaking4all.com/software/macosx-software/macosx-apple-pi-baker/))
 1. Enable WIFI and SSH
 1. `git clone https://github.com/sixteenbit/gameboy-zero-setup.git`
-1. `cd sixteenbit-installer`
+1. `cd gameboy-zero-setup`
 1. `sudo ./install.sh YES`
 1. `sudo reboot now`
 
 ## Post installation
+
+### Install Retrogame
+
+```bash
+cd; curl https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/retrogame.sh >retrogame.sh
+sudo bash retrogame.sh
+```
 
 ### Install Battery Monitor
 
@@ -37,13 +44,6 @@ This is a [modified version](https://github.com/sixteenbit/Mintybatterymonitor) 
 1. `sudo chmod 777 MintyInstall.sh`
 1. `sudo ./MintyInstall.sh`
 1. `sudo reboot now`
-
-### Install Retrogame
-
-```bash
-cd; curl https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/retrogame.sh >retrogame.sh
-sudo bash retrogame.sh
-```
 
 
 ## Credits
