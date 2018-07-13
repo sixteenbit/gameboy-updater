@@ -16,6 +16,10 @@ Scripts for setting up RetroPie on a Gameboy Zero.
 1. Disable 'wait for network' on boot
 1. Enable /tmp as a tmpfs (ramdisk)
 
+## Flashing the pre-configured image
+
+A preconfigured image is available to flash at https://github.com/sixteenbit/gameboy-zero-setup/releases. Download the latest release and flash the .img to an SD card (e.g. using [Etcher](https://etcher.io/) or [Apple Pi Baker](https://www.tweaking4all.com/software/macosx-software/macosx-apple-pi-baker/))
+
 ## Running the installer
 
 1. Download RetroPie from the [official site](https://retropie.org.uk/download/)
