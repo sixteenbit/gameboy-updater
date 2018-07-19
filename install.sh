@@ -118,28 +118,6 @@ fi
 # Copy splashscreens
 execute "cp $BINDIR/splashscreens/GBZ-Splash-Screen.mp4 $PIHOMEDIR/RetroPie/splashscreens/GBZ-Splash-Screen.mp4"
 
-# Copy USB sound
-execute "cp $BINDIR/settings/asound.conf $DEST/etc/asound.conf"
-
-# Fix splashsreen sound
-if exists "$DEST/etc/init.d/asplashscreen" ; then
-    execute "sed -i \"s/ *both/ alsa/\" $DEST/etc/init.d/asplashscreen"
-fi
-if exists "$DEST/opt/retropie/supplementary/splashscreen/asplashscreen.sh" ; then
-    execute "sed -i \"s/ *both/ alsa/\" $DEST/opt/retropie/supplementary/splashscreen/asplashscreen.sh"
-fi
-
-# Fix N64 audio
-if exists "$DEST/opt/retropie/emulators/mupen64plus/bin/mupen64plus.sh" ; then
-    execute "sed -i \"s/mupen64plus-audio-omx/mupen64plus-audio-sdl/\" $DEST/opt/retropie/emulators/mupen64plus/bin/mupen64plus.sh"
-fi
-
-# Fix C64 audio
-if ! exists "$PIHOMEDIR/.vice/sdl-vicerc" ; then
-      execute "mkdir -p $PIHOMEDIR/.vice/"
-      execute "echo 'SoundOutput=2' > $PIHOMEDIR/.vice/sdl-vicerc"
-fi
-
 # Install the gbz35 theme and set it as default
 if ! exists "$DEST/etc/emulationstation/themes/gbz35/gbz35.xml" ; then
     execute "mkdir -p $DEST/etc/emulationstation/themes"
@@ -155,13 +133,6 @@ if ! exists "$DEST/etc/emulationstation/themes/gbz35-dark/gbz35.xml" ; then
     execute "mkdir -p $DEST/etc/emulationstation/themes"
     execute "rm -rf $DEST/etc/emulationstation/themes/gbz35-dark"
     execute "git clone --recursive --depth 1 --branch master https://github.com/rxbrad/es-theme-gbz35-dark.git $DEST/etc/emulationstation/themes/gbz35-dark"
-fi
-
-# Install the pixel theme and set it as default
-if ! exists "$DEST/etc/emulationstation/themes/pixel/system/theme.xml" ; then
-    execute "mkdir -p $DEST/etc/emulationstation/themes"
-    execute "rm -rf $DEST/etc/emulationstation/themes/pixel"
-    execute "git clone --recursive --depth 1 --branch master https://github.com/kiteretro/es-theme-pixel.git $DEST/etc/emulationstation/themes/pixel"
 fi
 
 # Enable 30sec autosave on roms
