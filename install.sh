@@ -107,10 +107,10 @@ execute "chown -R $USER:$USER $BINDIR"
 #####################################################################
 # Copy required to /boot
 
-if ! exists "$DESTBOOT/config_ORIGINAL.txt" ; then
-  execute "cp $DESTBOOT/config.txt $DESTBOOT/config_ORIGINAL.txt"
-  execute "cp $BINDIR/settings/config.txt $DESTBOOT/config.txt"
-fi
+# if ! exists "$DESTBOOT/config_ORIGINAL.txt" ; then
+#   execute "cp $DESTBOOT/config.txt $DESTBOOT/config_ORIGINAL.txt"
+#   execute "cp $BINDIR/settings/config.txt $DESTBOOT/config.txt"
+# fi
 
 #####################################################################
 # Copy required to /
@@ -139,12 +139,12 @@ fi
 execute "sed -i \"s/# autosave_interval =/autosave_interval = \"30\"/\" $DEST/opt/retropie/configs/all/retroarch.cfg"
 
 # Disable 'wait for network' on boot
-execute "rm -f $DEST/etc/systemd/system/dhcpcd.service.d/wait.conf"
+# execute "rm -f $DEST/etc/systemd/system/dhcpcd.service.d/wait.conf"
 
 # Enable /tmp as a tmpfs (ramdisk)
-if [[ $(grep '/ramdisk' $DEST/etc/fstab) == "" ]] ; then
-    execute "echo 'tmpfs    /ramdisk    tmpfs    defaults,noatime,nosuid,size=1m    0 0' >> $DEST/etc/fstab"
-fi
+# if [[ $(grep '/ramdisk' $DEST/etc/fstab) == "" ]] ; then
+#     execute "echo 'tmpfs    /ramdisk    tmpfs    defaults,noatime,nosuid,size=1m    0 0' >> $DEST/etc/fstab"
+# fi
 
 #####################################################################
 # DONE
